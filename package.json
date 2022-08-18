@@ -5,17 +5,29 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules\\.bin\\cypress run",
-    "headtest" : "npm run test -- --headed",
-    "Chrometest" : "npm run test -- --browser chrome",
-    "greenTest" :"npm run test -- --spec \"cypress/integration/examples/greenkart/*\""
-
+    "headtest": "npm run test -- --headed",
+    "Chrometest": "npm run test -- --browser chrome",
+    "greenTest": "npm run test -- --spec \"cypress/integration/examples/greenkart/*\""
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cypress-cucumber-preprocessor": {
+      "cucumberJson": {
+        "generate": true,
+        "outputFolder": "cypress/cucumber-json",
+        "filePrefix": "",
+        "fileSuffix": ".cucumber"
+      }
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.4.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "mocha": "^10.0.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "multiple-cucumber-html-reporter": "^1.21.6"
   }
 }
